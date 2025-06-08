@@ -109,9 +109,9 @@ const Dashboard: React.FC = () => {
       </div>
 */}
       {/* Charts */}
- /*     <div className="grid lg:grid-cols-2 gap-8">
+{ /*     <div className="grid lg:grid-cols-2 gap-8">
         {/* Mood Trend */} 
-  /*      <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-100">
+{ /*      <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-100">
           <h3 className="text-xl font-semibold text-gray-900 mb-6">Weekly Mood Trend</h3>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={weeklyData}>
