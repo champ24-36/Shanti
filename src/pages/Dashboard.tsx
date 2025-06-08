@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+{/*import React, { useState } from 'react';
 import { 
   BarChart3, 
   TrendingUp, 
@@ -60,9 +60,9 @@ const Dashboard: React.FC = () => {
   );
 
   return (
-    <div className="space-y-8">
-      {/* Header */}
-      <div className="flex justify-between items-center">
+    <div className="space-y-8"> */}
+    {/* Header */}
+  {/* <div className="flex justify-between items-center">
         <div>
           <h1 className="text-3xl font-bold text-gray-900">Your Wellness Dashboard</h1>
           <p className="text-gray-600 mt-2">Track your mental health journey with AI-powered insights</p>
@@ -75,9 +75,9 @@ const Dashboard: React.FC = () => {
           Log Today's Mood
         </button>
       </div>
-
+*/}
       {/* Quick Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+{     /*<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <StatCard
           icon={Heart}
           title="Current Mood"
@@ -107,11 +107,11 @@ const Dashboard: React.FC = () => {
           color="bg-gradient-to-br from-orange-500 to-red-500"
         />
       </div>
-
+*/}
       {/* Charts */}
-      <div className="grid lg:grid-cols-2 gap-8">
-        {/* Mood Trend */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-100">
+ /*     <div className="grid lg:grid-cols-2 gap-8">
+        {/* Mood Trend */} 
+  /*      <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-100">
           <h3 className="text-xl font-semibold text-gray-900 mb-6">Weekly Mood Trend</h3>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={weeklyData}>
@@ -136,9 +136,9 @@ const Dashboard: React.FC = () => {
             </LineChart>
           </ResponsiveContainer>
         </div>
-
+*/
         {/* Weekly Overview */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-100">
+ /*       <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-100">
           <h3 className="text-xl font-semibold text-gray-900 mb-6">Weekly Overview</h3>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={weeklyData}>
@@ -161,7 +161,7 @@ const Dashboard: React.FC = () => {
       </div>
 
       {/* AI Insights */}
-      <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl p-8 text-white">
+/*      <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl p-8 text-white">
         <div className="flex items-start space-x-4">
           <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
             <BarChart3 className="w-6 h-6" />
@@ -184,7 +184,7 @@ const Dashboard: React.FC = () => {
       </div>
 
       {/* Mood Entry Modal */}
-      {showMoodEntry && (
+/*      {showMoodEntry && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-2xl p-8 max-w-md w-full max-h-[90vh] overflow-y-auto">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Log Today's Mood</h3>
@@ -289,4 +289,4 @@ const Dashboard: React.FC = () => {
   );
 };
 
-export default Dashboard;
+export default Dashboard; */}
