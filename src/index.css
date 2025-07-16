@@ -1,0 +1,331 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --toast-bg: #ffffff;
+  --toast-color: #374151;
+  --toast-border: #e5e7eb;
+  --heading-color: #7c3aed;
+  --button-light-bg: #f3f4f6;
+  --button-light-hover: #8b5cf6;
+  --button-dark-bg: #374151;
+  --button-dark-hover: #8b5cf6;
+}
+
+.dark {
+  --toast-bg: #374151;
+  --toast-color: #f9fafb;
+  --toast-border: #4b5563;
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Improve touch targets for mobile */
+  button, input, select, textarea {
+    min-height: 44px;
+  }
+  
+  /* Better mobile navigation */
+  .mobile-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid #e5e7eb;
+    padding: 0.5rem;
+    z-index: 50;
+  }
+}
+
+/* PWA specific styles */
+@media (display-mode: standalone) {
+  /* Hide browser UI when in standalone mode */
+  body {
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Add safe area padding for devices with notches */
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Enhanced heading styles - Purple-blue for all headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #7c3aed !important;
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  color: #a78bfa !important;
+}
+
+/* Enhanced button styles - Gradient purple-blue theme */
+.btn-primary {
+  @apply bg-gradient-to-r from-gray-200 to-gray-300 text-gray-800 hover:from-purple-500 hover:to-indigo-500 hover:text-white transition-all duration-300 font-medium px-4 py-2 rounded-lg;
+}
+
+.dark .btn-primary {
+  @apply bg-gradient-to-r from-gray-600 to-gray-700 text-gray-200 hover:from-purple-600 hover:to-indigo-600 hover:text-white;
+}
+
+.btn-header {
+  @apply text-gray-600 hover:text-purple-600 transition-colors duration-200;
+}
+
+.dark .btn-header {
+  @apply text-gray-300 hover:text-purple-400;
+}
+
+/* Consistent purple gradient buttons */
+.btn-gradient {
+  @apply bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200;
+}
+
+.btn-gradient-outline {
+  @apply border-2 border-purple-600 text-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-indigo-600 hover:text-white font-semibold rounded-xl transition-all duration-200;
+}
+
+.dark .btn-gradient-outline {
+  @apply border-purple-400 text-purple-400 hover:from-purple-600 hover:to-indigo-600 hover:text-white;
+}
+
+/* Card styling with purple accents */
+.card {
+  @apply bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-lg border border-purple-200 dark:border-purple-700 hover:shadow-xl transition-all duration-200;
+}
+
+/* Game elements */
+.game-card {
+  @apply bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-2xl p-6 border border-purple-200 dark:border-purple-700 hover:shadow-lg transition-all duration-300;
+}
+
+.breathing-circle {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.zen-garden-stone {
+  @apply w-8 h-8 bg-gradient-to-br from-purple-300 to-indigo-500 rounded-full cursor-pointer hover:shadow-lg transition-all duration-200;
+}
+
+.memory-card {
+  @apply w-16 h-16 bg-gradient-to-br from-purple-200 to-indigo-200 dark:from-purple-800 dark:to-indigo-800 rounded-lg cursor-pointer transition-all duration-300 flex items-center justify-center;
+}
+
+.memory-card.flipped {
+  @apply bg-gradient-to-br from-purple-400 to-indigo-400 dark:from-purple-600 dark:to-indigo-600;
+}
+
+/* Audio controls */
+.audio-player {
+  @apply bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 border border-purple-200 dark:border-purple-700;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-purple-300 dark:bg-purple-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-purple-400 dark:bg-purple-500;
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Focus styles for accessibility */
+.focus-visible:focus {
+  @apply outline-none ring-2 ring-purple-500 ring-offset-2 dark:ring-offset-gray-900;
+}
+
+/* Custom range slider styles */
+input[type="range"] {
+  @apply appearance-none bg-transparent cursor-pointer;
+}
+
+input[type="range"]::-webkit-slider-track {
+  @apply bg-gray-200 dark:bg-gray-700 rounded-lg h-2;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  @apply appearance-none bg-gradient-to-r from-purple-600 to-indigo-600 h-5 w-5 rounded-full shadow-lg;
+}
+
+input[type="range"]::-moz-range-track {
+  @apply bg-gray-200 dark:bg-gray-700 rounded-lg h-2 border-none;
+}
+
+input[type="range"]::-moz-range-thumb {
+  @apply bg-gradient-to-r from-purple-600 to-indigo-600 h-5 w-5 rounded-full border-none shadow-lg;
+}
+
+/* Line clamp utility */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Gentle animations */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.animate-breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Peaceful gradient backgrounds */
+.bg-peaceful {
+  background: linear-gradient(135deg, #f6f7f6 0%, #faf9ff 50%, #f6f7f6 100%);
+}
+
+.dark .bg-peaceful {
+  background: linear-gradient(135deg, #2b332b 0%, #581c87 50%, #2b332b 100%);
+}
+
+/* Ambient sound controls */
+.ambient-control {
+  @apply bg-gradient-to-r from-purple-100 to-indigo-100 dark:from-purple-900/30 dark:to-indigo-900/30 rounded-xl p-4 border border-purple-200 dark:border-purple-700;
+}
+
+/* Crisis contact styling */
+.crisis-contact {
+  @apply bg-gradient-to-r from-red-50 to-rose-50 dark:from-red-900/20 dark:to-rose-900/20 border-2 border-red-200 dark:border-red-700 rounded-xl p-4;
+}
+
+/* Chat container styling */
+.chat-container {
+  height: calc(100vh - 12rem);
+  min-height: 600px;
+}
+
+/* Input styling consistency */
+input, select, textarea {
+  @apply border border-purple-200 dark:border-purple-600 focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white;
+}
+
+/* Purple theme for all interactive elements */
+.interactive-element {
+  @apply hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors duration-200;
+}
+
+/* Consistent purple accents */
+.accent-purple {
+  @apply text-purple-600 dark:text-purple-400;
+}
+
+.bg-accent-purple {
+  @apply bg-purple-600 dark:bg-purple-500;
+}
+
+.border-accent-purple {
+  @apply border-purple-600 dark:border-purple-400;
+}
+
+/* Gradient backgrounds for divs and buttons */
+.bg-gradient-purple {
+  @apply bg-gradient-to-r from-purple-600 to-indigo-600;
+}
+
+.bg-gradient-purple-light {
+  @apply bg-gradient-to-r from-purple-100 to-indigo-100 dark:from-purple-900/30 dark:to-indigo-900/30;
+}
+
+/* Override all button backgrounds to use gradient */
+button:not(.btn-header) {
+  @apply bg-gradient-to-r from-purple-600 to-indigo-600 text-white;
+}
+
+.dark button:not(.btn-header) {
+  @apply bg-gradient-to-r from-purple-600 to-indigo-600 text-white;
+}
+
+/* Override div backgrounds to use gradient where appropriate */
+.bg-white {
+  @apply bg-gradient-to-br from-white to-purple-50/30;
+}
+
+.dark .bg-white {
+  @apply bg-gradient-to-br from-gray-800 to-purple-900/20;
+}
+
+.bg-gray-50 {
+  @apply bg-gradient-to-br from-purple-50 to-indigo-50;
+}
+
+.dark .bg-gray-50 {
+  @apply bg-gradient-to-br from-purple-900/20 to-indigo-900/20;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .mobile-optimized {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+  
+  /* Better mobile touch targets */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Mobile-friendly spacing */
+  .mobile-spacing {
+    padding: 1rem;
+  }
+}
+
+/* Prevent text selection on mobile for better UX */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+  /* iOS Safari specific styles */
+  input[type="text"], input[type="email"], input[type="password"], textarea {
+    font-size: 16px; /* Prevent zoom */
+  }
+}
